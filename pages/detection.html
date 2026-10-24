@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shill Bidding Review | BidCircle</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/ibrahim.css">
+<link rel="stylesheet" href="../css/mustafa.css">
+</head>
+<body data-root="../" data-page="detection">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header" class="site-header"></header>
+<main id="main" class="container">
+<h1>Shill bidding review <span class="sim-tag">Demo data</span></h1>
+<p class="alert alert-warn">These risk scores are predefined sample data. This page does not perform real fraud detection or prevent fraud.</p>
+<details class="panel"><summary>Example signals a reviewer might look at</summary><ul><li>Very new, unverified accounts</li><li>Two accounts raising each other repeatedly</li><li>Bidding mostly on one seller's listings</li><li>Bids placed seconds apart</li></ul></details>
+<div class="row"><p id="risk-summary" class="muted" role="status"></p><div><label for="risk-filter">Filter by risk</label><select id="risk-filter"><option value="all">All levels</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option></select></div></div>
+<div id="risk-list"></div>
+</main>
+<footer id="site-footer" class="site-footer"></footer>
+<script src="../js/sample-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/ibrahim/detection.js"></script>
+</body>
+</html>
