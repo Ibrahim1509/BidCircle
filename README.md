@@ -1,0 +1,2 @@
+# BidCircle
+Campus Auction Platform
