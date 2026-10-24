@@ -12,11 +12,21 @@
 <a class="skip" href="#main">Skip to content</a>
 <header id="site-header" class="site-header"></header>
 <main id="main" class="container">
-<h1>Bidding Engine</h1>
-<section class="panel placeholder" role="note"><span class="badge badge-upcoming">Placeholder</span>
-<h2>Integration point: Ibrahim's module</h2><p>Module 1: bidding engine.</p>
-<p class="muted">This page is implemented in Ibrahim's ZIP. Replace this file with Ibrahim's version (see README).</p>
-<p id="ph-info" class="muted small"></p></section>
+<h1>Bidding engine <span class="sim-tag">Simulated</span></h1>
+<p class="muted">Practise bidding on sample auctions. Nothing is saved, and there is no real concurrency control.</p>
+<label for="auction-select">Choose an auction</label><select id="auction-select"></select>
+<div class="bid-layout" style="margin-top:1rem">
+<section class="panel" id="bid-summary" aria-live="polite"></section>
+<section class="panel"><h2>Place a demonstration bid</h2>
+<form id="bid-form" novalidate>
+<label for="bid-amount">Your bid (PKR)</label><input id="bid-amount" type="number" step="1" inputmode="numeric">
+<label for="proxy-max">Proxy limit (optional)</label><input id="proxy-max" type="number" step="1" inputmode="numeric" aria-describedby="proxy-help">
+<p id="proxy-help" class="muted small">If someone outbids you, the demo automatically counters up to this amount.</p>
+<div class="bid-actions"><button class="btn btn-primary" id="place-btn" type="submit">Place bid</button>
+<button class="btn btn-secondary" id="rival-btn" type="button">Simulate rival bid</button>
+<button class="btn btn-gold" id="buy-btn" type="button">Buy Now</button></div>
+</form><div id="bid-msg" role="status" aria-live="polite"></div></section></div>
+<section class="panel"><h2>Bid history</h2><div class="table-wrap"><table><thead><tr><th>Time</th><th>Bidder</th><th>Amount</th><th>Type</th></tr></thead><tbody id="bid-history"></tbody></table></div></section>
 </main>
 <footer id="site-footer" class="site-footer"></footer>
 <script src="../js/sample-data.js"></script>
