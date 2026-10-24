@@ -12,11 +12,18 @@
 <a class="skip" href="#main">Skip to content</a>
 <header id="site-header" class="site-header"></header>
 <main id="main" class="container">
-<h1>Checkout</h1>
-<section class="panel placeholder" role="note"><span class="badge badge-upcoming">Placeholder</span>
-<h2>Integration point: Mustafa's module</h2><p>Module 7: simulated checkout and transaction history.</p>
-<p class="muted">This page is implemented in Mustafa's ZIP. Replace this file with Mustafa's version (see README).</p>
-<p id="ph-info" class="muted small"></p></section>
+<h1>Checkout <span class="sim-tag">Simulated</span></h1><p class="alert alert-warn">No real payments are processed. Do not enter card details.</p>
+<div id="receipt" class="alert alert-ok" role="status" hidden></div>
+<section class="panel"><h2>Items you won</h2><div id="no-pending" class="empty">Nothing waiting for checkout. Win an auction to see it here.</div>
+<form id="checkout-form"><label for="won-select">Auction</label><select id="won-select"></select><div id="order-summary" class="table-wrap"></div>
+<label for="pickup">Pickup point</label><select id="pickup" required><option value="">Choose a pickup point</option><option>Main library entrance</option><option>Cafeteria</option><option>Hostel gate</option></select>
+<label for="phone">Contact number</label><input id="phone" type="tel" required pattern="03[0-9]{9}" placeholder="03XXXXXXXXX" title="Enter an 11-digit mobile number starting with 03">
+<fieldset style="border:0;padding:0;margin-top:.7rem"><legend><strong>Payment method (simulated)</strong></legend>
+<label class="check"><input type="radio" name="method" value="Simulated cash on pickup" required> Cash on pickup</label>
+<label class="check"><input type="radio" name="method" value="Simulated campus wallet"> Campus wallet</label></fieldset>
+<label class="check"><input type="checkbox" required> I understand this is a simulation.</label>
+<button class="btn btn-primary" type="submit" style="margin-top:1rem">Confirm order</button></form></section>
+<section class="panel"><h2>Transaction history</h2><div class="table-wrap"><table><thead><tr><th>ID</th><th>Item</th><th>Role</th><th>Total</th><th>Status</th><th>Date</th></tr></thead><tbody id="tx-body"></tbody></table></div></section>
 </main>
 <footer id="site-footer" class="site-footer"></footer>
 <script src="../js/sample-data.js"></script>

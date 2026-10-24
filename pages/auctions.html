@@ -13,10 +13,27 @@
 <header id="site-header" class="site-header"></header>
 <main id="main" class="container">
 <h1>Auctions</h1>
-<section class="panel placeholder" role="note"><span class="badge badge-upcoming">Placeholder</span>
-<h2>Integration point: Mustafa's module</h2><p>Module 5: Listing & Category Management (search, category filters, item-listing form).</p>
-<p class="muted">This page is implemented in Mustafa's ZIP. Replace this file with Mustafa's version (see README).</p>
-<p id="ph-info" class="muted small"></p></section>
+<section class="panel" aria-label="Search and filters"><div class="filters">
+<div><label for="search">Search</label><input id="search" type="search" placeholder="e.g. calculator"></div>
+<div><label for="category">Category</label><select id="category"></select></div>
+<div><label for="status-filter">Status</label><select id="status-filter"><option value="all">All</option><option value="live">Live</option><option value="upcoming">Upcoming</option><option value="closed">Closed</option></select></div>
+<div><label for="sort">Sort by</label><select id="sort"><option value="ending">Ending soonest</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option></select></div>
+<button id="clear-filters" class="btn btn-secondary" type="button">Clear</button></div></section>
+<p id="result-count" class="muted" role="status"></p>
+<div id="listing-grid" class="grid"></div>
+<div id="empty-state" class="empty" hidden>No listings match. Try a different keyword or clear the filters.</div>
+<section class="panel" style="margin-top:2rem"><h2>List an item</h2><p class="muted small">Simulated: your listing appears here until you reload the page.</p>
+<div id="listing-ok" class="alert alert-ok" role="status" hidden></div>
+<form id="listing-form" novalidate class="form-grid">
+<div class="full"><label for="f-title">Item title</label><input id="f-title" required minlength="5" maxlength="80"><p class="field-error" id="err-f-title"></p></div>
+<div><label for="f-category">Category</label><select id="f-category" required></select><p class="field-error" id="err-f-category"></p></div>
+<div><label for="f-condition">Condition</label><select id="f-condition" required><option value="">Choose condition</option><option>Like new</option><option>Good</option><option>Fair</option></select><p class="field-error" id="err-f-condition"></p></div>
+<div class="full"><label for="f-desc">Description</label><textarea id="f-desc" rows="3" required minlength="20" maxlength="400"></textarea><p class="field-error" id="err-f-desc"></p></div>
+<div><label for="f-start">Starting price (PKR)</label><input id="f-start" type="number" min="100" required><p class="field-error" id="err-f-start"></p></div>
+<div><label for="f-inc">Minimum increment (PKR)</label><input id="f-inc" type="number" min="10" required><p class="field-error" id="err-f-inc"></p></div>
+<div><label for="f-buy">Buy Now price (optional)</label><input id="f-buy" type="number" min="100"><p class="field-error" id="err-f-buy"></p></div>
+<div><label for="f-hours">Duration (hours)</label><input id="f-hours" type="number" min="1" max="168" required><p class="field-error" id="err-f-hours"></p></div>
+<div class="full"><button class="btn btn-primary" type="submit">Publish listing</button></div></form></section>
 </main>
 <footer id="site-footer" class="site-footer"></footer>
 <script src="../js/sample-data.js"></script>
