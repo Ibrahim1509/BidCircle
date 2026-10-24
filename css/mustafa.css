@@ -1,0 +1,9 @@
+/* Mustafa's module styles: listings, trust, checkout, admin */
+.filters{display:grid;grid-template-columns:2fr 1fr 1fr 1fr auto;gap:.7rem;align-items:end}
+.review{margin:.5rem 0;padding:.5rem .9rem;border-left:4px solid var(--teal);background:#f0f5f5}.review p{margin:0}.rating{font-size:1.2rem;color:#a87000}
+#user-list{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}
+.stat-box strong{display:block;font-size:1.6rem;color:var(--teal-dark)}.stat-box{margin:0}
+#admin-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem}
+.bar-row{display:grid;grid-template-columns:130px 1fr 2rem;gap:.6rem;align-items:center;margin:.4rem 0}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 1rem}.form-grid .full{grid-column:1/-1}
+@media (max-width:760px){.filters,.form-grid{grid-template-columns:1fr}}

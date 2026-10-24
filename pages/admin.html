@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard | BidCircle</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/ibrahim.css">
+<link rel="stylesheet" href="../css/mustafa.css">
+</head>
+<body data-root="../" data-page="admin">
+<a class="skip" href="#main">Skip to content</a>
+<header id="site-header" class="site-header"></header>
+<main id="main" class="container">
+<h1>Admin dashboard <span class="sim-tag">Sample data</span></h1><p class="alert alert-warn">Demo only. There is no real login or admin access control.</p>
+<div id="admin-stats"></div>
+<section class="panel" style="margin-top:1rem"><h2>Listings by category</h2><div id="cat-chart"></div></section>
+<section class="panel"><h2>Flagged users</h2><div class="table-wrap"><table><thead><tr><th>User</th><th>Risk</th><th>Main reason</th><th>Review</th></tr></thead><tbody id="flagged-body"></tbody></table></div></section>
+<section class="panel"><h2>Reports</h2><div class="table-wrap"><table><thead><tr><th>Type</th><th>Target</th><th>Reason</th><th>Status</th><th>Actions</th></tr></thead><tbody id="report-body"></tbody></table></div></section>
+</main>
+<footer id="site-footer" class="site-footer"></footer>
+<script src="../js/sample-data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/mustafa/admin.js"></script>
+</body>
+</html>
